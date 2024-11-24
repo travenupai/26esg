@@ -1,0 +1,24 @@
+[project]
+name = "esg"
+version = "0.1.0"
+description = "esg using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<=3.13"
+dependencies = [
+   "crewai-tools>=0.14.0",
+   "crewai[tools]>=0.76.9,<1.0.0",
+   "docx>=0.2.4",
+   "python-docx>=1.1.2",
+   "streamlit>=1.40.1",
+]
+
+[project.scripts]
+esg = "esg.main:run"
+run_crew = "esg.main:run"
+train = "esg.main:train"
+replay = "esg.main:replay"
+test = "esg.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -1,0 +1,49 @@
+pesquisa_mercado_task:
+  description: >
+    Esta tarefa envolve a coleta e análise de informações detalhadas sobre a empresa em {site_url}, 
+    incluindo produtos, análise SWOT, setor de mercado e público-alvo. Com o uso de ferramentas 
+    como o ScrapeWebsiteTool e o SerperDevTool, o agente deve acessar e compilar informações 
+    sobre a presença da empresa no mercado e analisar o posicionamento em comparação com concorrentes. 
+    O objetivo é criar um documento detalhado com uma visão completa da empresa, incluindo 
+    oportunidades e ameaças específicas ao setor e às preferências do consumidor. Essa tarefa é 
+    fundamental para fornecer um embasamento sólido para os agentes seguintes e garantir que todas 
+    as ações ESG recomendadas estejam alinhadas com o contexto e as necessidades 
+    reais da empresa em {site_url}.
+  expected_output: >
+    O resultado deve ser um documento chamado pesquisa_empresa.md com aproximadamente 1200 palavras. 
+    Este documento deve incluir uma análise SWOT completa, com destaque para pontos fortes, fraquezas, 
+    oportunidades e ameaças, além de uma visão aprofundada sobre o mercado e o público consumidor. 
+    A análise precisa ser clara e fornecer dados sólidos que servirão de base para a análise ESG. 
+    É importante que o documento contenha uma seção final resumindo as descobertas principais, para 
+    facilitar a compreensão dos próximos agentes que utilizarão esses dados.
+  agent: pesquisa_agent
+
+levantamento_esg_task:
+  description: >
+    O objetivo desta tarefa é levantar os principais desafios e oportunidades ESG que a empresa em {site_url} enfrenta, usando como base o documento criado pelo Agente de Pesquisa. O agente deve identificar no mínimo sete práticas ESG inovadoras que sejam eficazes tanto no Brasil quanto no exterior. Essas práticas devem focar na redução de custos e mitigação de riscos, sempre com viabilidade econômica. O uso de ferramentas como o SerperDevTool e PDFSearchTool permitirá acessar relatórios de sustentabilidade, regulamentos e práticas globais para construir uma visão realista e pragmática.
+  expected_output: >
+    O resultado será um documento intitulado levantamento_esg.md com aproximadamente 800 palavras. Este documento deve listar os desafios e as oportunidades ESG da empresa e apresentar práticas que oferecem benefícios econômicos e redução de riscos. Cada prática recomendada deve ser detalhada em termos de custo e benefício, e o documento precisa ser estruturado para servir como base para o Agente de Sugestão no desenvolvimento do plano de ação.
+  agent: levantamento_agent
+
+sugestao_esg_task:
+  description: >
+    Com os dados levantados, esta tarefa envolve a realização de um benchmark da empresa em {site_url} em relação a seus concorrentes, focando em práticas ESG. O agente deve identificar as quatro principais ações estratégicas que a empresa pode implementar, incluindo um plano detalhado de ação com estimativas de custo. A análise deve utilizar o WebsiteSearchTool e o SerperDevTool para buscar exemplos de concorrentes que se destacaram em ESG, oferecendo recomendações de alto impacto que aliam economia e redução de riscos.
+  expected_output: >
+    O resultado é um documento sugestao_esg.md, com aproximadamente 800 palavras, que deve conter as quatro principais recomendações em ESG para a empresa. Cada recomendação deve incluir um plano de ação detalhado, cronograma de implementação, custos estimados e uma justificativa financeira. Esse documento será usado como guia para o Agente de Planejamento de Implementação organizar as ações propostas.
+
+  agent: sugestao_agent
+
+conformidade_task:
+  description: >
+    Esta tarefa exige uma análise de conformidade ampla para identificar problemas regulatórios e de governança comuns ao setor econômico e aos produtos que a empresa em {site_url} produz e vende. Como o agente não encontrou informações de conformidade específicas, ele deve expandir sua pesquisa globalmente, utilizando o PDFSearchTool e WebsiteSearchTool para acessar normas aplicáveis e relatórios de conformidade do setor. O objetivo é analisar benchmarks de conformidade de outras empresas do setor, identificando desafios comuns e soluções. O agente deve então elaborar uma lista detalhada de 10 ações para que a empresa alcance conformidade, incluindo práticas recomendadas, estruturas de controle e ajustes operacionais para assegurar conformidade regulatória.
+  expected_output: >
+        O resultado é um relatório intitulado conformidade_relatorio.md com cerca de 800 palavras, contendo uma análise global dos problemas de conformidade do setor econômico e dos produtos da empresa. Este relatório deve apresentar uma lista detalhada de 10 ações práticas e recomendadas para a empresa alcançar conformidade, cada uma explicada em profundidade, abordando aspectos operacionais e de controle necessários. O conteúdo deve estar organizado em formato de checklist para fácil acompanhamento e ser essencial para o Agente de Planejamento de Implementação garantir que as ações estejam em conformidade com as melhores práticas do setor.
+
+  agent: conformidade_agent
+
+planejamento_task:
+  description: >
+    Com as recomendações definidas, o agente é responsável por organizar um plano de implementação detalhado para as práticas ESG sugeridas. Esse plano deve incluir um cronograma, alocação de recursos e priorização de ações. Utilizando as ferramentas disponíveis, o agente deve garantir que as ações sejam executáveis dentro dos prazos e orçamento estipulados, promovendo uma adoção eficaz das práticas sustentáveis recomendadas para a empresa em {site_url}.
+  expected_output: >
+    O resultado é um documento plano_implementacao.md com aproximadamente 800 palavras que deve conter um cronograma de planejamento que descreve cada etapa do processo de implementação, incluindo os recursos e prazos necessários. Esse planejamento será essencial para a empresa colocar em prática as ações ESG de forma ordenada e dentro do orçamento, maximizando os benefícios e assegurando o cumprimento de todos os requisitos regulamentares.
+  agent: planejamento_agent
