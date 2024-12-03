@@ -17,6 +17,32 @@ uv add python-docx
 # acima roda sem problemas, uv já está no python global.
 
 
+
+do zero
+uv init
+uv add crewai
+.venv\Scripts\activate
+crewai create crew chat
+1
+3
+control c control v
+
+apaga tudo do 2CHAT
+apaga o venv
+
+deactivate
+cd chat
+
+python -m venv .venv
+.venv\Scripts\activate
+uv add crewai
+uv add crewai-tools
+uv add streamlit
+uv add python-docx
+
+
+
+
 #isso deu certo em 22/11/24 depois que já estava criado a estrtura.
 depois da troca de python 3.12.6 para 3.12.7
 
