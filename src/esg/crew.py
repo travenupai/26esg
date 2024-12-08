@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 # from src.esg.my_llm import MyLLM
-from crewai_tools import SerperDevTool, ScrapeWebsiteTool, ScrapeElementFromWebsiteTool, WebsiteSearchTool, PDFSearchTool
+from crewai_tools import SerperDevTool, ScrapeWebsiteTool, PDFSearchTool
 from langchain_openai import ChatOpenAI
 
 
@@ -39,7 +39,7 @@ class Esg():
 	def pesquisa_agent(self) -> Agent:
 		return Agent(
 			config=self.agents_config['pesquisa_agent'],
-			tools=[SerperDevTool(), ScrapeWebsiteTool(), WebsiteSearchTool()],
+			tools=[SerperDevTool(), ScrapeWebsiteTool() ],
 			verbose=True,
 			memory=True,
 			allow_delegation=True,
@@ -53,7 +53,7 @@ class Esg():
 	def levantamento_agent(self) -> Agent:
 		return Agent(
 			config=self.agents_config['levantamento_agent'],
-			tools=[SerperDevTool(), ScrapeElementFromWebsiteTool(), PDFSearchTool()],
+			tools=[SerperDevTool(), PDFSearchTool()],
 			verbose=True,
 			memory=True,
 			allow_delegation=True,
@@ -66,7 +66,7 @@ class Esg():
 	def sugestao_agent(self) -> Agent:
 		return Agent(
 			config=self.agents_config['sugestao_agent'],
-			tools=[SerperDevTool(), WebsiteSearchTool()],
+			tools=[SerperDevTool()],
 			verbose=True,
 			memory=True,
 			allow_delegation=True,
@@ -79,7 +79,7 @@ class Esg():
 	def conformidade_agent(self) -> Agent:
 		return Agent(
 			config=self.agents_config['conformidade_agent'],
-			tools=[PDFSearchTool(), WebsiteSearchTool()],
+			tools=[PDFSearchTool()],
 			verbose=True,
 			memory=True,
 			allow_delegation=True,
