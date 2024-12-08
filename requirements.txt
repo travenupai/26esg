@@ -1,5 +1,6 @@
+--no-cache-dir
 crewai>=0.61.0
-crewai-tools>=0.8.3
+crewai-tools>=0.61.0
 embedchain>=0.1.114,<0.2.0
 langchain>=0.2.16,<0.4.0
 langchain-openai>=0.1.7,<0.2.0
