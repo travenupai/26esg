@@ -1,5 +1,5 @@
 # CrewAI and Tools
-crewai==0.8.0
+crewai==0.61.0
 crewai-tools==0.8.3
 
 # Embedchain and Langchain
