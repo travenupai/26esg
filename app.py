@@ -1,6 +1,11 @@
 # app.py
 
 import os
+
+__import__('pysqlite3') #081224
+import sys #081224
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3') #081224
+
 from src.esg.crew import Esg
 import streamlit as st
 from io import BytesIO
